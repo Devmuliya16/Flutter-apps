@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 
 //functions
-import 'package:firebase_app/functions/login_signup.dart';
+import 'package:firebase_app/functions/auth%20functions.dart';
 
 //pages
 import 'package:firebase_app/pages/home_page.dart';
@@ -22,7 +22,7 @@ class _SplashScreen extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    result = Auth().isLoggedin();
+    result = isLoggedin();
     print(result);
     if (result) {
       SchedulerBinding.instance.addPostFrameCallback((timeStamp) {

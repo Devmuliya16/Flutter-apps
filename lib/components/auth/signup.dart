@@ -1,7 +1,7 @@
 import 'package:firebase_app/pages/splash_screen.dart';
 import 'package:flutter/material.dart';
 import '../../widgets/borderinput.dart';
-import '../../functions/login_signup.dart';
+import '../../functions/auth functions.dart';
 
 Column getSignup(
     TextEditingController nameController,
@@ -25,7 +25,7 @@ Column getSignup(
       SizedBox(height: 20),
       ElevatedButton(
           onPressed: () async {
-            bool val = await Auth().Signup(
+            bool val = await Signup(
                 nameController.text, emailController.text, passController.text);
             if (val)
               Navigator.pushReplacement(

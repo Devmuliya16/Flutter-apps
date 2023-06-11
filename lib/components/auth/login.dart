@@ -1,4 +1,4 @@
-import 'package:firebase_app/functions/login_signup.dart';
+import 'package:firebase_app/functions/auth%20functions.dart';
 import 'package:firebase_app/pages/splash_screen.dart';
 import 'package:flutter/material.dart';
 import '../../widgets/borderinput.dart';
@@ -22,7 +22,7 @@ Column getLogin(
       SizedBox(height: 20),
       ElevatedButton(
           onPressed: () async {
-            await Auth().Login(emailController.text, passController.text);
+            await Login(emailController.text, passController.text);
             Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(

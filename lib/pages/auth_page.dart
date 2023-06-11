@@ -25,16 +25,12 @@ class _AuthPageState extends State<AuthPage> {
         title: Text(widget.title),
       ),
       body: Center(
-          child: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: widget.login
-                ? getLogin(emailController, passController, _toggle, context)
-                : getSignup(namexController, emailController, passController,
-                    _toggle, context),
-          ),
-        ],
+          child: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: widget.login
+            ? getLogin(emailController, passController, _toggle, context)
+            : getSignup(namexController, emailController, passController,
+                _toggle, context),
       )),
     );
   }

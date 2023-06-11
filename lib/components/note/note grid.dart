@@ -3,6 +3,8 @@ import 'package:firebase_app/pages/edit%20note.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
+import '../../widgets/badge.dart';
+
 class NotesGrid extends StatefulWidget {
   NotesGrid({super.key, required this.crossAxiscnt, required this.data});
   late int crossAxiscnt;
@@ -59,7 +61,7 @@ class Note extends StatelessWidget {
             child: Text(this.note['title'] ?? "",
                 style: Theme.of(context).textTheme.titleLarge),
           ),
-          Icon(Icons.abc)
+          getBadge(title: this.note['tag'], color: Colors.lightBlue)
         ],
       ),
       Text(this.note['note'] ?? ""),
