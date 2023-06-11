@@ -1,8 +1,5 @@
-import 'package:firebase_app/widgets/dropdown.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
-
-import '../../functions/crud funtions.dart';
 
 class getEditNote extends StatefulWidget {
   const getEditNote({
