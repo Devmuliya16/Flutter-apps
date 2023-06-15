@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 //pages
-import 'package:firebase_app/pages/splash_screen.dart';
+import 'package:firebase_app/pages/splash%20page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

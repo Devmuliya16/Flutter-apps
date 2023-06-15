@@ -5,6 +5,8 @@ import 'package:firebase_app/widgets/floating%20action.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
+import 'edit note.dart';
+
 class HomePage extends StatefulWidget {
   HomePage({super.key, required this.title});
   final String title;
@@ -67,7 +69,17 @@ class _HomePageState extends State<HomePage> {
           }
         },
       ),
-      floatingActionButton: FAbutton(),
+      floatingActionButton: FAbutton(fun: getEdit, icon: Icons.add),
     );
+  }
+
+  void getEdit() async {
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => EditNote(
+                  title: "New Note",
+                  note: null,
+                )));
   }
 }

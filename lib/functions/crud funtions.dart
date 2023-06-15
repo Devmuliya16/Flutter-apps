@@ -6,7 +6,7 @@ final users = FirebaseFirestore.instance.collection("users");
 final notes = FirebaseFirestore.instance.collection("notes");
 final FirebaseAuth auth = FirebaseAuth.instance;
 
-create(String title, String note, String tag) async {
+create(String title, String note, int color, String tag) async {
   final user = auth.currentUser;
   String uid = user!.uid;
   final String time = DateTime.now().toString();
@@ -14,18 +14,20 @@ create(String title, String note, String tag) async {
     'title': title,
     'note': note,
     'tag': tag,
+    'color': color,
     'time': time,
     'updated': time
   });
 }
 
-update(String title, String note, String time, String tag) async {
+update(String title, String note, int color, String time, String tag) async {
   final user = auth.currentUser;
   String uid = user!.uid;
 
   await notes.doc(uid).collection('mynotes').doc(time).update({
     'title': title,
     'note': note,
+    'color': color,
     'tag': tag,
     'time': time,
     'updated': DateTime.now().toString()

@@ -16,12 +16,14 @@ class UpdatePage extends StatefulWidget {
 
 class _UpdatePageState extends State<UpdatePage> {
   Map<String, dynamic> userinfo = {};
+  @override
   void initState() {
-    initializeTags();
+    getUser();
   }
 
-  Future<void> initializeTags() async {
+  Future<void> getUser() async {
     userinfo = await getUserInfo();
+    setState(() {});
   }
 
   @override
@@ -35,10 +37,6 @@ class _UpdatePageState extends State<UpdatePage> {
       ScaffoldMessenger.of(context).showSnackBar(getSnackBar(message, () {}));
     }
 
-    rebuild() {
-      setState(() {});
-    }
-
     return Scaffold(
       appBar: AppBar(
         title: Text(this.widget.title),
@@ -47,14 +45,8 @@ class _UpdatePageState extends State<UpdatePage> {
           child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: SingleChildScrollView(
-          child: getUpdate(
-              nameController,
-              emailController,
-              passController,
-              userinfo['profile'] ?? defaulturl,
-              context,
-              showSnackBar,
-              rebuild),
+          child: getUpdate(nameController, emailController, passController,
+              userinfo['profile'] ?? defaulturl, context, showSnackBar),
         ),
       )),
     );

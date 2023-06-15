@@ -1,4 +1,4 @@
-import 'package:firebase_app/pages/splash_screen.dart';
+import 'package:firebase_app/pages/splash%20page.dart';
 import 'package:flutter/material.dart';
 import '../../widgets/borderinput.dart';
 import '../../functions/auth functions.dart';

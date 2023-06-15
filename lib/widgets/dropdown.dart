@@ -16,26 +16,25 @@ class DropdownComp extends StatefulWidget {
 class _DropdownCompState extends State<DropdownComp> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: DropdownButton<String?>(
-          isExpanded: false,
-          isDense: true,
-          hint: Text("choose tag"),
-          underline: Container(),
-          value: widget.selectedTag == "" ? null : widget.selectedTag,
-          onChanged: (String? newValue) {
-            setState(() {
-              widget.selectedTag = newValue;
-              widget.selectTag(newValue);
-            });
-          },
-          items: [
-            for (String tag in widget.tags)
-              DropdownMenuItem<String>(
-                value: tag,
-                child: Text(tag),
-              ),
-          ]),
-    );
+    return DropdownButton<String?>(
+        padding: EdgeInsets.symmetric(horizontal: 20),
+        isExpanded: true,
+        isDense: false,
+        hint: Text("choose tag"),
+        underline: Container(),
+        value: widget.selectedTag == "" ? null : widget.selectedTag,
+        onChanged: (String? newValue) {
+          setState(() {
+            widget.selectedTag = newValue;
+            widget.selectTag(newValue);
+          });
+        },
+        items: [
+          for (String tag in widget.tags)
+            DropdownMenuItem<String>(
+              value: tag,
+              child: Text(tag),
+            ),
+        ]);
   }
 }

@@ -1,3 +1,4 @@
+import 'package:firebase_app/pages/splash%20page.dart';
 import 'package:flutter/material.dart';
 import '../../widgets/borderinput.dart';
 import '../../functions/auth functions.dart';
@@ -9,7 +10,6 @@ Column getUpdate(
   String url,
   BuildContext context,
   Function showSnackBar,
-  Function rebuild,
 ) {
   return Column(
     mainAxisAlignment: MainAxisAlignment.center,
@@ -17,7 +17,10 @@ Column getUpdate(
       InkWell(
         onTap: () async {
           await uploadProfile();
-          Navigator.pop(context);
+          Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => SplashScreen(title: 'Notes')));
         },
         child: CircleAvatar(
           backgroundImage: NetworkImage(url),

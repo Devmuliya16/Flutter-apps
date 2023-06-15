@@ -1,10 +1,10 @@
 import 'package:firebase_app/functions/auth%20functions.dart';
-import 'package:firebase_app/pages/addtag_page.dart';
+import 'package:firebase_app/pages/edit%20tag%20page.dart';
 import 'package:flutter/material.dart';
 
 import '../../functions/crud funtions.dart';
-import '../../pages/auth_page.dart';
-import '../../pages/update_page.dart';
+import '../../pages/authentication page.dart';
+import '../../pages/update page.dart';
 import '../../widgets/drawer header.dart';
 
 final defaulturl =
@@ -110,8 +110,8 @@ class _DrawerCompState extends State<DrawerComp> {
               ),
               IconButton(
                 icon: Icon(Icons.settings_outlined),
-                onPressed: () {
-                  Navigator.push(
+                onPressed: () async {
+                  bool res = await Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) => UpdatePage(title: "Edit Info"),

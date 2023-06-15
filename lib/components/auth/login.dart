@@ -1,5 +1,5 @@
 import 'package:firebase_app/functions/auth%20functions.dart';
-import 'package:firebase_app/pages/splash_screen.dart';
+import 'package:firebase_app/pages/splash%20page.dart';
 import 'package:flutter/material.dart';
 import '../../widgets/borderinput.dart';
 

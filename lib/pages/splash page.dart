@@ -6,9 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:firebase_app/functions/auth%20functions.dart';
 
 //pages
-import 'package:firebase_app/pages/home_page.dart';
+import 'package:firebase_app/pages/home%20page.dart';
 import 'package:flutter/scheduler.dart';
-import 'auth_page.dart';
+import 'authentication page.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key, required this.title});
